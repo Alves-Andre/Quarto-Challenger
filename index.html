@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/css.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&family=Space+Mono&family=Spartan:wght@700&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <p>calc</p>
+  </nav>
+  <main>
+    <div id="visor">
+      <label id="resultado" value="0">0</label>
+    </div>
+    <div id="calculadora">
+      <button onclick="teste(id)" value="7" class="botoes" id="sete"> 7 </button>
+      <button onclick="teste(id)" value="8"  class="botoes" id="oito"> 8 </button>
+      <button onclick="teste(id)" value="9"  class="botoes" id="nove"> 9 </button>
+      <button onclick="teste(id)" value="del"  class="botoes" id="del"> DEL </button>
+ 
+      <button onclick="teste(id)" value="4" class="botoes" id="quatro"> 4 </button>
+      <button onclick="teste(id)" value="5"  class="botoes" id="cinco"> 5 </button>
+      <button onclick="teste(id)" value="6"  class="botoes" id="seis"> 6 </button>
+      <button onclick="teste(id)" value="+"  class="botoes" id="mais"> + </button>
+ 
+      <button onclick="teste(id)" value="1" class="botoes" id="um"> 1 </button>
+      <button onclick="teste(id)" value="2"  class="botoes" id="dois"> 2 </button>
+      <button onclick="teste(id)" value="3"  class="botoes" id="tres"> 3 </button>
+      <button onclick="teste(id)" value="-"  class="botoes" id="menos"> - </button>
+ 
+      <button onclick="teste(id)" value="." class="botoes" id="ponto"> . </button>
+      <button onclick="teste(id)" value="0"  class="botoes" id="zero"> 0 </button>
+      <button onclick="teste(id)" value="/"  class="botoes" id="barra"> / </button>
+      <button onclick="teste(id)" value="*"  class="botoes" id="asteristico"> * </button>
+ 
+      <button onclick="teste(id)" value="reset" class="btfinal" id="resete"> RESET </button>
+      <button onclick="resultado()" value="="  class="btfinal" id="igual"> = </button>
+    </div> 
+  </main>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="github.com/Alves-Andre">André Alves</a>.
+  </div>
+</body>
+<script src="scripts/js.js"></script>
+
+</html>
