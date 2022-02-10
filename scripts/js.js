@@ -1,22 +1,11 @@
-function teste(idi){
+function inserir(idi){
     valor = document.getElementById(idi).value;
     conteudo = document.getElementById("resultado").innerHTML;
     if (valor == 'reset'){
-        document.getElementById("resultado").innerText = '0';
+        reset();
     }
     else if (valor == 'del'){
-        const lista = conteudo.split("");
-        cont = parseInt(lista.length)
-        var total = '';
-        if (cont==1){
-            document.getElementById("resultado").innerText = 0;
-        }
-        else{
-            for (var i = 0; i < cont-1; i++) {
-                total = total+lista[i];
-            }
-            document.getElementById("resultado").innerText = total;
-        }
+        del(conteudo);
     }
     else {
         if (conteudo == '0'){
@@ -25,10 +14,16 @@ function teste(idi){
             }
             else{
                 document.getElementById("resultado").innerText += valor;
-            }    
+            }
         }
         else {
-            document.getElementById("resultado").innerText += valor;
+            var funcao = operador(conteudo,valor);
+            if (funcao==true){
+                return null;
+            }
+            else{
+                document.getElementById("resultado").innerText += valor;
+            }
         }
     }
 }
@@ -66,5 +61,47 @@ function resultado(){
         var total1 = total.replace('/','');
         var total2 = total1.replace('/','');
         document.getElementById("resultado").innerHTML = total2;
+    }
+}
+function del(conteudo){
+    const lista = conteudo.split("");
+        cont = parseInt(lista.length)
+        var total = '';
+        if (cont==1){
+            document.getElementById("resultado").innerText = 0;
+        }
+        else{
+            for (var i = 0; i < cont-1; i++) {
+                total = total+lista[i];
+            }
+            document.getElementById("resultado").innerText = total;
+        }
+}
+function reset(){
+    document.getElementById("resultado").innerText = '0';
+}
+function operador(conteudo,digitado){
+    const lista = conteudo.split("");
+    var total = '';
+    var valor = '';
+    cont = 0;
+    for (var i = 0; i < lista.length; i++) {
+        valor =lista[i];
+    }
+    if (valor != '+' & valor != '-' & valor != '/' & valor != '*' & valor != '.'){
+        return false;
+    }
+    else {
+        if (digitado == '+' || digitado == '-' || digitado == '/' || digitado == '*' || digitado == '.'){
+            cont = 0;
+            for (var i = 0; i < lista.length-1; i++) {
+                total += lista[i];
+            }
+            document.getElementById("resultado").innerText = total+digitado;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
